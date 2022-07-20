@@ -1,0 +1,28 @@
+<nav class="navbar" style="background-color: #0F172B;">
+    <div class="container-fluid">
+        <a>
+            <h1 class="navbar-brand p-0 text-primary" style="font-size: 40px; margin-left: 200px;"><a
+                    href="/">AnyCheck</a></h1>
+        </a>
+        <form [formGroup]="form" (ngSubmit)="getCheck()" class="d-flex" role="search">
+
+            <div class="row g-3">
+
+                <div class="col-12">
+                    <label>Номер чека</label>
+
+                    <input id="orderNumber" type="text" name="orderNumber" formControlName="orderNumber"
+                        class="form-control" placeholder="Введите номер чека">
+                </div>
+
+
+
+                <div class="col-12">
+                    <button class="btn btn-primary" style="margin-right: 70px;"
+                        [disabled]="form.invalid || form.disabled" type="submit">Поиск</button>
+                </div>
+
+            </div>
+        </form>
+    </div>
+</nav>
