@@ -5,6 +5,7 @@ import { Order } from 'src/app/model/order';
 import { Check } from 'src/app/model/сheck';
 import { CheckProduct } from 'src/app/model/сheckProduct';
 import { OrderService } from 'src/app/services/order.service';
+import { OrderStatus } from '../../model/enum/orderstatus';
 
 @Component({
   selector: 'app-order',
@@ -17,6 +18,7 @@ export class OrderComponent implements OnInit {
   public isWaiting = false;
   public hasCheck = true;
   public form!: FormGroup;
+  statusType: Array<string> = Object.keys(OrderStatus).filter(key => isNaN(+key))
 
   constructor(public orderService: OrderService, public route: ActivatedRoute) { }
 
