@@ -33,7 +33,7 @@ export class OrderComponent implements OnInit {
       let number = params["num"];
       this.orderService.getCheck(number).subscribe(data => {
         this.check = data;
-        if (!this.check) {
+        if (!this.check || this.check == null) {
           this.hasCheck = false;
         }
         else {
